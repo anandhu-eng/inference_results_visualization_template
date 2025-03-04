@@ -72,8 +72,8 @@ test $? -eq 0 || exit $?
 git push || (sleep $((RANDOM % 100 + 1)) && git pull --rebase && git push)
 
 if [ -z "$(git config --global user.name)" ]; then
-    git config --global user.name "mlcommons-bot"
-    git config --global user.email "mlcommons-bot@users.noreply.github.com"
+    git config user.name "mlcommons-bot"
+    git config user.email "mlcommons-bot@users.noreply.github.com"
     echo "Git user not detected. Default mlcommons-bot username and email configured."
 fi
 
